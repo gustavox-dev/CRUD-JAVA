@@ -3,11 +3,12 @@ package com.example.Animes.controller;
 import com.example.Animes.entities.Anime;
 import com.example.Animes.entities.Animes;
 import com.example.Animes.entities.DataOfAnime;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping(headers = "Content-type, application/vnd.api+json, Aceppt {application/vnd.api+json}", consumes = "application/vnd.api+json", produces = "application/vnd.api+json")
+//@RequestMapping(headers = "Content-type, application/vnd.api+json, Aceppt {application/vnd.api+json}", consumes = "application/vnd.api+json", produces = "application/vnd.api+json")
 public interface IAnimeController {
 
 
@@ -17,7 +18,7 @@ public interface IAnimeController {
 
 //    @RequestMapping(method = RequestMethod.GET, value = "/anime")
     @GetMapping(value = "/anime")
-    Animes listaDeAnimes();
+    ResponseEntity<Animes> listaDeAnimes();
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/categories", consumes = "application/vnd.api+json")

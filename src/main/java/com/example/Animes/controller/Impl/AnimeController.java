@@ -6,6 +6,7 @@ import com.example.Animes.entities.Animes;
 import com.example.Animes.entities.DataOfAnime;
 import com.example.Animes.service.AnimeService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class AnimeController implements IAnimeController {
         return service.animesEmTendencia();
     }
 
-    public Animes listaDeAnimes() {
+    public ResponseEntity<Animes> listaDeAnimes() {
         return service.listaDeAnimes();
     }
 
